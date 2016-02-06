@@ -1,0 +1,23 @@
+{
+  "name": "fat",
+  "version": "0.1.0",
+  "description": "fat-mach-o format parser",
+  "main": "fat.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:viaforensics/node-fat"
+  },
+  "keywords": [
+    "fat-mach-o",
+    "mach-o",
+    "mac",
+    "executable",
+    "format"
+  ],
+  "author": "Sergi Alvarez i Capilla <pancake@nowsecure.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/viaforensics/node-fat",
+  "dependencies": {
+    "macho": "0.3.0"
+  }
+}
