@@ -15,12 +15,12 @@ const cpuType = {
 }
 
 fat.parse = function(data, cb) {
+  const u32 = function (x) {
+    return data.readUInt32BE(x);
+  }
   const magic = u32(0);
   if (magic !== CAFEBABE) {
     throw 'invalid file format'
-  }
-  function u32(x) {
-    return data.readUInt32BE(x);
   }
   const eof = data.length;
   const ncmds = u32(4);
