@@ -6,25 +6,23 @@ const fat = require('./fat');
 
 const file = process.argv[2];
 if (file === undefined) {
-	console.log('Usage: node index.js [path-to-fat-macho]');
-	process.exit (1);
+  console.log('Usage: node index.js [path-to-fat-macho]');
+  process.exit(1);
 }
 
 const data = fs.readFileSync(file);
 try {
-	/* try to parse macho binary */
-	var exec = macho.parse(data);
-	console.log(exec);
+  /* try to parse macho binary */
+  console.log(macho.parse(data));
 } catch (e) {
-	/* try to parse fat-macho binary */
-	var bins = fat.parse(data);
-	for (var b of bins) {
-		console.log(b);
-		try {
-			var exec = macho.parse(b.data);
-			console.log(exec);
-		} catch (e) {
-			console.error (e);
-		}
-	}
+  /* try to parse fat-macho binary */
+  const bins = fat.parse(data);
+  for (var b of bins) {
+    console.log(b);
+    try {
+      console.log(macho.parse(b.data));
+    } catch (e) {
+      console.error(e);
+    }
+  }
 }
