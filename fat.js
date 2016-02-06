@@ -3,14 +3,14 @@ var fat = exports;
 
 const CAFEBABE = 3405691582;
 
-fat.cpuType = {
-	0x03: 'i386',
+const cpuType = {
+	0x00000003: 'i386',
 	0x80000003: 'x86_64',
-	0x0a: 'ppc_32',
-	0x08: 'mips',
-	0x0c: 'arm',
-	0x8000000c: 'arm64',
-	0x8000000e: 'sparc',
+	0x0000000a: 'ppc_32',
+	0x8000000a: 'ppc_64',
+	0x00000009: 'arm',
+	0x00000000: 'arm64',
+	0x80000009: 'arm64',
 }
 
 fat.parse = function(data) {
@@ -21,6 +21,7 @@ fat.parse = function(data) {
 	var slices = [];
 	var ncmds = data.readUInt32BE (4);
 	for (var off = 0xc; ncmds-- > 0; off += 20) {
+		var cpu = data.readUInt32BE(off);
 		var from = data.readUInt32BE(off+4);
 		var size = data.readUInt32BE(off+8);
 		if (from === 0 || size === 0) {
@@ -31,7 +32,7 @@ fat.parse = function(data) {
 			continue;
 		}
 		slices.push({
-			arch: data.readUInt32BE(off),
+			arch: cpuType[cpu] || cpu,
 			offset: from,
 			size: size,
 			align: data.readUInt32BE(off+12),

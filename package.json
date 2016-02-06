@@ -1,5 +1,5 @@
 {
-  "name": "fat",
+  "name": "fatmacho",
   "version": "0.1.0",
   "description": "fat-mach-o format parser",
   "main": "fat.js",
