@@ -43,7 +43,7 @@ const data = fs.readFileSync(file);
 const bins = fat.parse(process.argv[2]);
 
 for (const b of bins) {
-  console.log(fat.cpuType[b.arch], b.offset, '+', b.size);
-  console.log (macho.parse (b.data));
+  console.log(b.arch, b.offset, '+', b.size);
+  console.log(macho.parse (b.data));
 }
 ```
