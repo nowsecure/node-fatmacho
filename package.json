@@ -18,6 +18,6 @@
   "license": "MIT",
   "homepage": "https://github.com/viaforensics/node-fat",
   "dependencies": {
-    "macho": "0.3.0"
+    "macho": "*"
   }
 }

@@ -5,9 +5,7 @@ fat mach-o file-format parsers
 
 Legal
 -----
-This node module has been written by Sergi Àlvarez at Nowsecure
-
-TODO: Define license
+This node module has been written by Sergi Àlvarez at Nowsecure and it is distributed under the MIT license.
 
 Usage
 -----
