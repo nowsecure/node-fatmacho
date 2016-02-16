@@ -1,11 +1,11 @@
 {
   "name": "fatmacho",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "fat-mach-o format parser",
   "main": "fat.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:viaforensics/node-fat"
+    "url": "https://github.com/nowsecure/node-fatmacho"
   },
   "keywords": [
     "fat-mach-o",
@@ -16,7 +16,7 @@
   ],
   "author": "Sergi Alvarez i Capilla <pancake@nowsecure.com>",
   "license": "MIT",
-  "homepage": "https://github.com/viaforensics/node-fat",
+  "homepage": "https://github.com/nowsecure/node-fatmacho",
   "dependencies": {
     "macho": "*"
   }
