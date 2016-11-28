@@ -20,7 +20,7 @@ fat.parse = function(data, cb) {
   }
   const magic = u32(0);
   if (magic !== CAFEBABE) {
-    throw 'invalid file format'
+    throw new Error('invalid file format');
   }
   const eof = data.length;
   const ncmds = u32(4);
