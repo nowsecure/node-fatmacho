@@ -18,6 +18,6 @@
   "license": "MIT",
   "homepage": "https://github.com/nowsecure/node-fatmacho",
   "dependencies": {
-    "macho": "*"
+    "macho": "^1.4.0"
   }
 }
