@@ -17,6 +17,9 @@
   "author": "Sergi Alvarez i Capilla <pancake@nowsecure.com>",
   "license": "MIT",
   "homepage": "https://github.com/nowsecure/node-fatmacho",
+  "devDependencies": {
+    "semistandard": "*"
+  },
   "dependencies": {
     "macho": "^1.4.0"
   }
